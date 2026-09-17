@@ -1,0 +1,1405 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Post Fair Follow Up Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FAF6FE;
+    --paper: #FFFFFF;
+    --ink: #2C1F3D;
+    --ink-soft: #6B5983;
+    --purple-900: #3D2463;
+    --purple-600: #8B5FBF;
+    --purple-300: #C9AEEA;
+    --purple-100: #F0E6FA;
+    --pink-200: #F4DCEF;
+    --line: #E1CFF3;
+    --focus: #8B5FBF;
+    --warn: #A6436D;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: #201430;
+      --paper: #2C1D40;
+      --ink: #F3EAFB;
+      --ink-soft: #C7B3DE;
+      --purple-900: #E7D8F7;
+      --purple-600: #C9A6ED;
+      --purple-300: #6B4B8F;
+      --purple-100: #382650;
+      --pink-200: #3E2A45;
+      --line: #4A3465;
+      --warn: #E29AB8;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #201430;
+    --paper: #2C1D40;
+    --ink: #F3EAFB;
+    --ink-soft: #C7B3DE;
+    --purple-900: #E7D8F7;
+    --purple-600: #C9A6ED;
+    --purple-300: #6B4B8F;
+    --purple-100: #382650;
+    --pink-200: #3E2A45;
+    --line: #4A3465;
+    --warn: #E29AB8;
+  }
+
+  *{box-sizing:border-box;}
+  html{background:var(--bg);}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Work Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--purple-600);}
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible{
+    outline:3px solid var(--focus);
+    outline-offset:2px;
+    border-radius:4px;
+  }
+  img{max-width:100%;}
+
+  .page{max-width:700px; margin:0 auto; padding:0 22px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    text-align:center;
+    padding:56px 10px 20px;
+    opacity:0;
+    animation: rise .7s ease-out forwards .1s;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .hero{animation:none; opacity:1;}
+  }
+  @keyframes rise{
+    from{opacity:0; transform:translateY(14px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  .badge-wrap{width:150px; margin:0 auto 8px;}
+  .hero h1{
+    font-family:'Fredoka', sans-serif;
+    font-weight:700;
+    font-size:clamp(2.1rem, 6.5vw, 3.1rem);
+    color:var(--purple-900);
+    line-height:1.05;
+    margin:6px 0 12px;
+  }
+  .hero .sub{
+    color:var(--ink-soft);
+    font-size:1.08rem;
+    max-width:440px;
+    margin:0 auto;
+    line-height:1.5;
+  }
+  .hero .credit{
+    font-family:'Caveat', cursive;
+    font-size:1.3rem;
+    color:var(--purple-600);
+    margin-top:18px;
+  }
+
+  .toc{
+    display:flex; flex-wrap:wrap; gap:8px;
+    justify-content:center;
+    margin:28px auto 0;
+    max-width:560px;
+  }
+  .toc a{
+    background:var(--purple-100);
+    color:var(--purple-900);
+    border:1px solid var(--purple-300);
+    padding:6px 14px;
+    border-radius:999px;
+    font-size:0.85rem;
+    font-weight:600;
+    text-decoration:none;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{
+    padding:38px 0;
+    border-top:1px dashed var(--line);
+  }
+  section:first-of-type{border-top:none;}
+  h2{
+    font-family:'Fredoka', sans-serif;
+    font-weight:600;
+    font-size:1.55rem;
+    color:var(--purple-900);
+    margin:0 0 6px;
+    line-height:1.15;
+  }
+  h2 .mark{
+    display:inline-block;
+    width:9px; height:9px;
+    background:var(--purple-600);
+    border-radius:50%;
+    margin-right:9px;
+    vertical-align:middle;
+  }
+  h3{
+    font-family:'Fredoka', sans-serif;
+    font-weight:600;
+    font-size:1.15rem;
+    color:var(--purple-900);
+    margin:0 0 4px;
+  }
+  .kicker{
+    color:var(--purple-600);
+    font-family:'Caveat', cursive;
+    font-size:1.15rem;
+    margin:0 0 2px;
+  }
+  p{
+    line-height:1.68;
+    font-size:1.01rem;
+    max-width:62ch;
+  }
+  section > p:first-of-type{margin-top:14px;}
+  ul.plain, ol.plain{max-width:62ch; padding-left:1.1em; line-height:1.6;}
+  ul.plain li, ol.plain li{margin-bottom:8px;}
+
+  .note{
+    display:inline-block;
+    background:var(--pink-200);
+    color:var(--purple-900);
+    font-family:'Caveat', cursive;
+    font-size:1.3rem;
+    padding:12px 20px;
+    border-radius:4px;
+    transform:rotate(-1.4deg);
+    box-shadow:3px 4px 0 var(--purple-300);
+    margin:14px 0 6px;
+  }
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{
+    display:flex; gap:6px;
+    margin:26px 0 4px;
+  }
+  .timeline .stop{flex:1; min-width:0;}
+  .timeline .bar{
+    height:9px;
+    border-radius:5px;
+    background:var(--purple-600);
+  }
+  .timeline .stop:nth-child(1) .bar{opacity:1;}
+  .timeline .stop:nth-child(2) .bar{opacity:.75;}
+  .timeline .stop:nth-child(3) .bar{opacity:.5;}
+  .timeline .stop:nth-child(4) .bar{opacity:.28;}
+  .timeline .stop .label{
+    font-weight:700;
+    font-size:0.85rem;
+    color:var(--purple-900);
+    margin-top:9px;
+  }
+  .timeline .stop .tag{
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    margin-top:2px;
+  }
+  @media (max-width:540px){
+    .timeline{flex-direction:column; gap:14px;}
+    .timeline .bar{height:8px;}
+  }
+
+  /* ---------- CHECKLIST ---------- */
+  .checklist{margin:22px 0 6px; max-width:62ch;}
+  .check-item{margin-bottom:14px;}
+  .check-item label{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    cursor:pointer;
+  }
+  .check-item input[type="checkbox"]{
+    appearance:none;
+    -webkit-appearance:none;
+    width:22px; height:22px;
+    min-width:22px;
+    border-radius:7px;
+    border:2px solid var(--purple-300);
+    background:var(--paper);
+    margin-top:2px;
+    cursor:pointer;
+    position:relative;
+  }
+  .check-item input[type="checkbox"]:checked{
+    background:var(--purple-600);
+    border-color:var(--purple-600);
+  }
+  .check-item input[type="checkbox"]:checked::after{
+    content:"";
+    position:absolute;
+    left:6px; top:2px;
+    width:6px; height:11px;
+    border:solid #fff;
+    border-width:0 2px 2px 0;
+    transform:rotate(40deg);
+  }
+  .check-item span{font-size:0.98rem; line-height:1.5; transition:opacity .2s;}
+  .check-item.done span{text-decoration:line-through; opacity:.5;}
+  .reset-row{margin-top:8px;}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    font-family:'Fredoka', sans-serif;
+    font-weight:600;
+    font-size:0.88rem;
+    border-radius:999px;
+    padding:9px 18px;
+    cursor:pointer;
+    border:1px solid var(--purple-300);
+    background:var(--paper);
+    color:var(--purple-900);
+  }
+  .btn:hover{background:var(--purple-100);}
+  .btn-primary{
+    background:var(--purple-600);
+    color:#fff;
+    border:none;
+  }
+  .btn-primary:hover{background:var(--purple-900);}
+  .btn-text{
+    background:none;
+    border:none;
+    color:var(--purple-600);
+    font-family:'Fredoka', sans-serif;
+    font-weight:600;
+    font-size:0.85rem;
+    cursor:pointer;
+    padding:4px 2px;
+  }
+  .btn[disabled]{opacity:.45; cursor:not-allowed;}
+  .btn-row{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:14px;}
+  .status-text{font-size:0.85rem; color:var(--ink-soft);}
+
+  /* ---------- NUMBERED STRUCTURE LIST ---------- */
+  .steps-list{list-style:none; padding:0; margin:22px 0 0; counter-reset:step;}
+  .steps-list li{
+    counter-increment:step;
+    position:relative;
+    padding-left:46px;
+    margin-bottom:20px;
+  }
+  .steps-list li::before{
+    content:counter(step);
+    position:absolute; left:0; top:-2px;
+    width:30px; height:30px;
+    border-radius:50%;
+    background:var(--purple-100);
+    border:2px solid var(--purple-300);
+    color:var(--purple-900);
+    font-family:'Fredoka', sans-serif;
+    font-weight:700;
+    font-size:0.95rem;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .steps-list h4{
+    margin:0 0 3px;
+    font-size:1.02rem;
+    color:var(--purple-900);
+  }
+  .steps-list p{margin:0; color:var(--ink-soft); font-size:0.96rem;}
+
+  /* ---------- CARD (example email / linkedin note) ---------- */
+  .card{
+    background:var(--paper);
+    border:1px solid var(--purple-300);
+    border-radius:12px;
+    padding:22px 24px;
+    margin:20px 0;
+    box-shadow:3px 4px 0 var(--purple-100);
+  }
+  .card .label{
+    font-size:0.78rem;
+    font-weight:700;
+    color:var(--purple-600);
+    margin-bottom:10px;
+  }
+  .card .subject{
+    font-weight:700;
+    color:var(--ink);
+    margin-bottom:10px;
+    font-size:0.98rem;
+  }
+  .card p{margin:0 0 10px; font-size:0.97rem;}
+  .card p:last-child{margin-bottom:0;}
+
+  /* ---------- BUILDER TOOLS ---------- */
+  .builder{
+    background:var(--purple-100);
+    border-radius:16px;
+    padding:24px;
+    margin:22px 0;
+  }
+  .builder .kicker{margin-top:0;}
+  .builder-fields{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-top:14px;
+  }
+  .builder-fields .field.wide{grid-column:1 / -1;}
+  @media (max-width:540px){ .builder-fields{grid-template-columns:1fr;} }
+  .field{display:flex; flex-direction:column; gap:5px;}
+  .field label{
+    font-size:0.8rem;
+    font-weight:600;
+    color:var(--ink-soft);
+  }
+  .field input, .field select{
+    font-family:inherit;
+    font-size:0.95rem;
+    padding:9px 11px;
+    border:1px solid var(--purple-300);
+    border-radius:9px;
+    background:var(--paper);
+    color:var(--ink);
+    width:100%;
+  }
+  .builder-preview{
+    background:var(--paper);
+    border:1px solid var(--purple-300);
+    border-radius:12px;
+    padding:20px 22px;
+    margin-top:18px;
+    box-shadow:3px 4px 0 var(--purple-300);
+  }
+  .builder-preview .subject{font-weight:700; margin-bottom:10px; font-size:0.98rem;}
+  .builder-preview .body-text{white-space:pre-line; font-size:0.97rem; line-height:1.6;}
+  .char-count{font-size:0.8rem; color:var(--ink-soft); margin-top:8px;}
+  .char-count.over{color:var(--warn); font-weight:700;}
+
+  /* ---------- DO / DONT ---------- */
+  .dodont{
+    display:flex;
+    flex-wrap:wrap;
+    gap:24px;
+    margin-top:20px;
+    max-width:620px;
+  }
+  .dodont > div{flex:1 1 240px; min-width:220px;}
+  .dodont h4{
+    font-family:'Fredoka', sans-serif;
+    font-size:1rem;
+    color:var(--purple-900);
+    margin:0 0 10px;
+  }
+  .dodont ul{list-style:none; padding:0; margin:0;}
+  .dodont li{
+    position:relative;
+    padding-left:20px;
+    margin-bottom:9px;
+    font-size:0.95rem;
+    color:var(--ink-soft);
+    line-height:1.5;
+  }
+  .dodont .do li::before{
+    content:"";
+    position:absolute; left:0; top:7px;
+    width:8px; height:8px;
+    border-radius:50%;
+    background:var(--purple-600);
+  }
+  .dodont .dont li::before{
+    content:"";
+    position:absolute; left:1px; top:6px;
+    width:8px; height:8px;
+    border-radius:50%;
+    border:1.5px solid var(--purple-300);
+  }
+
+  /* ---------- MISTAKES ---------- */
+  .mistakes{list-style:none; padding:0; margin:22px 0 0; max-width:62ch;}
+  .mistakes li{
+    display:flex;
+    gap:14px;
+    margin-bottom:16px;
+  }
+  .mistakes .num{
+    font-family:'Fredoka', sans-serif;
+    font-weight:700;
+    color:var(--purple-300);
+    font-size:1.3rem;
+    line-height:1.3;
+    min-width:26px;
+  }
+  .mistakes p{margin:0; font-size:0.98rem;}
+
+  /* ---------- STEPPER ---------- */
+  .stepper{
+    border-left:2px solid var(--purple-300);
+    margin:24px 0 0 14px;
+    padding-left:26px;
+  }
+  .step{position:relative; padding-bottom:26px;}
+  .step:last-child{padding-bottom:0;}
+  .step .num{
+    position:absolute; left:-39px; top:-1px;
+    width:26px; height:26px;
+    border-radius:50%;
+    background:var(--purple-600);
+    color:#fff;
+    font-family:'Fredoka', sans-serif;
+    font-weight:600;
+    font-size:0.82rem;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .step h4{margin:0 0 4px; font-size:1.02rem; color:var(--purple-900);}
+  .step p{margin:0; font-size:0.96rem; color:var(--ink-soft);}
+
+  /* ---------- DATE CALCULATOR ---------- */
+  .datecalc{margin-top:26px;}
+  .datecalc .field{max-width:260px;}
+  .datecalc-results{margin-top:16px; display:grid; gap:10px;}
+  .datecalc-row{
+    background:var(--paper);
+    border:1px solid var(--purple-300);
+    border-radius:10px;
+    padding:12px 16px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+  .datecalc-row .what{font-size:0.92rem; color:var(--ink-soft);}
+  .datecalc-row .when{font-family:'Fredoka', sans-serif; font-weight:600; color:var(--purple-900); font-size:0.95rem; white-space:nowrap;}
+  .datecalc-placeholder{font-size:0.92rem; color:var(--ink-soft); font-style:italic; margin-top:14px;}
+
+  /* ---------- FAQ ---------- */
+  .faq-item{
+    background:var(--paper);
+    border:1px solid var(--purple-300);
+    border-radius:12px;
+    padding:4px 20px;
+    margin-bottom:12px;
+  }
+  .faq-item summary{
+    cursor:pointer;
+    font-family:'Fredoka', sans-serif;
+    font-weight:600;
+    color:var(--purple-900);
+    padding:14px 0;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:"+";
+    font-size:1.3rem;
+    color:var(--purple-600);
+    flex-shrink:0;
+  }
+  .faq-item[open] summary::after{content:"\2212";}
+  .faq-item p{margin:0 0 16px; font-size:0.96rem; color:var(--ink-soft);}
+
+  /* ---------- TABLE / TRACKER ---------- */
+  .example-line{
+    font-size:0.9rem;
+    color:var(--ink-soft);
+    font-style:italic;
+    margin:14px 0 0;
+    padding:10px 14px;
+    background:var(--purple-100);
+    border-radius:8px;
+    max-width:62ch;
+  }
+  .table-wrap{
+    overflow-x:auto;
+    margin:18px 0;
+    border-radius:12px;
+    border:1px solid var(--purple-300);
+  }
+  table{width:100%; border-collapse:collapse; table-layout:fixed; font-size:0.84rem;}
+  th{
+    background:var(--purple-100);
+    color:var(--purple-900);
+    text-align:left;
+    padding:9px 11px;
+    font-weight:700;
+  }
+  th:not(:first-child), td:not(:first-child){
+    border-left:1px solid var(--line);
+  }
+  td{
+    padding:5px;
+    border-top:1px solid var(--line);
+    color:var(--ink);
+    vertical-align:top;
+  }
+  td input, td select{
+    width:100%;
+    border:1px solid transparent;
+    background:transparent;
+    font-family:inherit;
+    font-size:0.84rem;
+    padding:6px;
+    border-radius:6px;
+    color:var(--ink);
+  }
+  td input:hover, td select:hover, td input:focus, td select:focus{
+    border-color:var(--purple-300);
+    background:var(--paper);
+  }
+  td.remove-cell{text-align:center; vertical-align:middle;}
+  .row-remove{
+    background:none;
+    border:none;
+    color:var(--ink-soft);
+    cursor:pointer;
+    font-size:1.1rem;
+    line-height:1;
+    padding:4px 8px;
+  }
+  .row-remove:hover{color:var(--warn);}
+  .table-note{font-size:0.88rem; color:var(--ink-soft); margin-top:10px;}
+
+  /* ---------- RECAP BOX ---------- */
+  .recap{
+    background:var(--purple-100);
+    border-radius:16px;
+    padding:28px 26px;
+    max-width:620px;
+  }
+  .recap h2{margin-bottom:4px;}
+  .recap ul{list-style:none; padding:0; margin:16px 0 0;}
+  .recap li{
+    position:relative;
+    padding-left:24px;
+    margin-bottom:11px;
+    font-size:0.98rem;
+    line-height:1.5;
+  }
+  .recap li::before{
+    content:"";
+    position:absolute; left:0; top:7px;
+    width:9px; height:9px;
+    border-radius:50%;
+    background:var(--purple-600);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    text-align:center;
+    padding:44px 20px 60px;
+    color:var(--purple-600);
+    font-size:0.92rem;
+    border-top:1px dashed var(--line);
+    margin-top:10px;
+  }
+  footer .heart{font-size:1rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <div class="badge-wrap">
+      <svg viewBox="0 0 200 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a conference name badge on a lanyard">
+        <g transform="rotate(-6 100 115)">
+          <rect x="86" y="4" width="10" height="46" rx="5" fill="var(--purple-300)" transform="rotate(18 91 27)"/>
+          <rect x="104" y="4" width="10" height="46" rx="5" fill="var(--purple-300)" transform="rotate(-18 109 27)"/>
+          <rect x="28" y="44" width="144" height="172" rx="20" fill="var(--paper)" stroke="var(--purple-300)" stroke-width="3"/>
+          <circle cx="100" cy="66" r="9" fill="var(--bg)" stroke="var(--purple-300)" stroke-width="3"/>
+          <rect x="55" y="92" width="90" height="10" rx="5" fill="var(--purple-100)"/>
+          <rect x="65" y="110" width="70" height="8" rx="4" fill="var(--purple-100)"/>
+          <rect x="44" y="176" width="112" height="24" rx="6" fill="var(--paper)" stroke="var(--purple-300)" stroke-width="2"/>
+          <rect x="52" y="182" width="3" height="12" fill="var(--purple-600)"/>
+          <rect x="58" y="182" width="2" height="12" fill="var(--purple-600)"/>
+          <rect x="63" y="182" width="4" height="12" fill="var(--purple-600)"/>
+          <rect x="70" y="182" width="2" height="12" fill="var(--purple-600)"/>
+          <rect x="75" y="182" width="3" height="12" fill="var(--purple-600)"/>
+          <rect x="81" y="182" width="5" height="12" fill="var(--purple-600)"/>
+          <rect x="89" y="182" width="2" height="12" fill="var(--purple-600)"/>
+          <rect x="94" y="182" width="3" height="12" fill="var(--purple-600)"/>
+          <rect x="100" y="182" width="4" height="12" fill="var(--purple-600)"/>
+          <rect x="107" y="182" width="2" height="12" fill="var(--purple-600)"/>
+          <rect x="112" y="182" width="3" height="12" fill="var(--purple-600)"/>
+          <rect x="118" y="182" width="5" height="12" fill="var(--purple-600)"/>
+          <rect x="126" y="182" width="2" height="12" fill="var(--purple-600)"/>
+          <rect x="131" y="182" width="3" height="12" fill="var(--purple-600)"/>
+          <rect x="137" y="182" width="4" height="12" fill="var(--purple-600)"/>
+          <rect x="144" y="182" width="2" height="12" fill="var(--purple-600)"/>
+        </g>
+        <g transform="translate(146 40) rotate(12)">
+          <path d="M14 26 C4 18 0 10 5 4 C9 -1 14 1 14 6 C14 1 19 -1 23 4 C28 10 24 18 14 26 Z" fill="var(--purple-600)"/>
+        </g>
+      </svg>
+    </div>
+    <h1>The Post Fair<br>Follow Up Guide</h1>
+    <p class="sub">You survived the career fair. Here's how to turn a quick booth conversation into an actual next step, with tools built right in so you can do it as you read.</p>
+    <p class="credit">from your WiCSE Career Development fam 💜</p>
+
+    <nav class="toc" aria-label="Guide sections">
+      <a href="#timing">Timing</a>
+      <a href="#checklist">Booth Checklist</a>
+      <a href="#email">The Email</a>
+      <a href="#linkedin">LinkedIn</a>
+      <a href="#mistakes">Common Mistakes</a>
+      <a href="#silence">If They Go Quiet</a>
+      <a href="#faq">FAQ</a>
+      <a href="#tracker">Tracker</a>
+      <a href="#recap">Cheat Sheet</a>
+    </nav>
+  </header>
+
+  <section id="why">
+    <p class="kicker">before we start</p>
+    <h2><span class="mark"></span>The Fair Was the Warm Up</h2>
+    <p>A recruiter working a booth for a few hours talks to dozens of students, sometimes over a hundred. By the time they're back at their desk, most of those conversations have already blurred together.</p>
+    <p>The follow up is the part that actually separates you from everyone else they met, mostly because most students never send one. Recruiters often get asked by their own hiring managers who stood out at the fair, and a good follow up is one of the easiest ways to be the answer to that question.</p>
+    <div class="note">real talk: the bar here is low. you just have to actually do it.</div>
+  </section>
+
+  <section id="timing">
+    <p class="kicker">timing</p>
+    <h2><span class="mark"></span>Send It While You're Still a Person</h2>
+    <p>The longer you wait, the more you're competing with your own name blending into everyone else's. Here's roughly how your timing affects your odds:</p>
+    <div class="timeline">
+      <div class="stop">
+        <div class="bar"></div>
+        <div class="label">Same day or next morning</div>
+        <div class="tag">Best. You might be the first email in their inbox.</div>
+      </div>
+      <div class="stop">
+        <div class="bar"></div>
+        <div class="label">24 to 48 hours</div>
+        <div class="tag">Still great. Well within their sorting window.</div>
+      </div>
+      <div class="stop">
+        <div class="bar"></div>
+        <div class="label">Within a week</div>
+        <div class="tag">Okay. Worth sending, less impact.</div>
+      </div>
+      <div class="stop">
+        <div class="bar"></div>
+        <div class="label">After a week</div>
+        <div class="tag">Cold start. You're basically reintroducing yourself.</div>
+      </div>
+    </div>
+    <p>If the fair is virtual and still running, you can send your first message before it even ends.</p>
+  </section>
+
+  <section id="checklist">
+    <p class="kicker">right at the booth</p>
+    <h2><span class="mark"></span>Grab This Before You Walk Away</h2>
+    <p>Check these off as you go between conversations. Your phone remembers so you don't have to.</p>
+    <div class="checklist">
+      <div class="check-item">
+        <label>
+          <input type="checkbox" data-item="name">
+          <span><strong>Get their name spelled correctly.</strong> Off a business card, their badge, or just ask.</span>
+        </label>
+      </div>
+      <div class="check-item">
+        <label>
+          <input type="checkbox" data-item="contact">
+          <span><strong>Get an email or LinkedIn.</strong> Ask directly, or connect on the spot if they have a QR code.</span>
+        </label>
+      </div>
+      <div class="check-item">
+        <label>
+          <input type="checkbox" data-item="detail">
+          <span><strong>Jot one or two specifics before the next conversation.</strong> What you talked about, a shared connection, something they said that stuck.</span>
+        </label>
+      </div>
+      <div class="check-item">
+        <label>
+          <input type="checkbox" data-item="gut">
+          <span><strong>Note how the conversation felt.</strong> If they seemed genuinely interested, that's a company to prioritize in your first wave of emails tonight.</span>
+        </label>
+      </div>
+    </div>
+    <div class="reset-row">
+      <button class="btn-text" id="checklist-reset" type="button">Reset checklist</button>
+    </div>
+  </section>
+
+  <section id="email">
+    <p class="kicker">the main event</p>
+    <h2><span class="mark"></span>The Email That Gets Read</h2>
+    <p>Recruiters are following up with everyone they met too, which means they're skimming. Specificity is what gets you an actual reply instead of a skim and forget.</p>
+
+    <p style="margin-top:26px;"><strong>Subject line</strong>, specific enough that they know exactly who you are and where you met:</p>
+    <ul class="plain">
+      <li>"Great meeting you at [Career Fair Name], [Your Name]"</li>
+      <li>"Following up on our chat about [Team or Role]"</li>
+      <li>"Thanks for the conversation at [Company]'s booth"</li>
+    </ul>
+
+    <p style="margin-top:26px;"><strong>The four things every follow up needs, in this order:</strong></p>
+    <ol class="steps-list">
+      <li>
+        <h4>Reintroduce yourself</h4>
+        <p>One line: who you are, and when and where you met. They talked to a lot of people today, so don't assume they remember your face.</p>
+      </li>
+      <li>
+        <h4>Bring back your memory hook</h4>
+        <p>The specific detail from your notes. This is the single line that proves you weren't just collecting business cards.</p>
+      </li>
+      <li>
+        <h4>Reiterate interest, briefly</h4>
+        <p>One sentence, naming the role or team if you know it. Skip repeating your whole pitch, they already have your resume.</p>
+      </li>
+      <li>
+        <h4>Make a clear ask</h4>
+        <p>A real next step, not just "thanks again." Ask about next steps for the role, or that you'd love to stay in touch as they hire.</p>
+      </li>
+    </ol>
+
+    <div class="card">
+      <div class="label">EXAMPLE</div>
+      <div class="subject">Subject: Great meeting you at the UF Career Fair, [Your Name]</div>
+      <p>Hi [Recruiter Name],</p>
+      <p>It was great talking with you at the UF Career Fair yesterday. I'm the CS student who mentioned [specific detail, for example working on a computer vision project for my capstone].</p>
+      <p>I'm really interested in the [Role or Team] you mentioned, especially [reason tied to something they said]. Would love to hear about next steps, or happy to share more about my background if that's useful.</p>
+      <p>Thanks again for your time,<br>[Your Name]<br>[Phone]<br>[LinkedIn]</p>
+    </div>
+
+    <div class="dodont">
+      <div class="do">
+        <h4>Do</h4>
+        <ul>
+          <li>Keep it under about 150 words</li>
+          <li>Double check the company name and their name</li>
+          <li>Match your tone to the company. A startup booth and a Fortune 500 table read differently</li>
+        </ul>
+      </div>
+      <div class="dont">
+        <h4>Don't</h4>
+        <ul>
+          <li>Attach your resume again unless they ask</li>
+          <li>Thank them more than once. It reads as unsure, not polite</li>
+          <li>Write it vague enough that it could've gone to anyone</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="builder" id="email-builder">
+      <p class="kicker">try it yourself</p>
+      <h3>Build Your Email</h3>
+      <p style="margin-top:0;">Fill in what you remember. The email on the right updates as you type, and the copy button grabs the whole thing.</p>
+      <div class="builder-fields">
+        <div class="field">
+          <label for="eb-name">Your name</label>
+          <input type="text" id="eb-name" placeholder="Dalila Portal">
+        </div>
+        <div class="field">
+          <label for="eb-recruiter">Recruiter's name</label>
+          <input type="text" id="eb-recruiter" placeholder="Jamie Rivera">
+        </div>
+        <div class="field">
+          <label for="eb-fair">Career fair name</label>
+          <input type="text" id="eb-fair" placeholder="UF Career Fair">
+        </div>
+        <div class="field">
+          <label for="eb-company">Company</label>
+          <input type="text" id="eb-company" placeholder="Akamai">
+        </div>
+        <div class="field">
+          <label for="eb-role">Role or team</label>
+          <input type="text" id="eb-role" placeholder="Solutions Engineering Internship">
+        </div>
+        <div class="field">
+          <label for="eb-phone">Phone (optional)</label>
+          <input type="text" id="eb-phone" placeholder="(555) 555 0123">
+        </div>
+        <div class="field wide">
+          <label for="eb-detail">Specific detail from your conversation</label>
+          <input type="text" id="eb-detail" placeholder="working on a computer vision project for my capstone">
+        </div>
+        <div class="field wide">
+          <label for="eb-reason">Why you're interested</label>
+          <input type="text" id="eb-reason" placeholder="the way you described the team's onboarding process">
+        </div>
+        <div class="field wide">
+          <label for="eb-linkedin">LinkedIn URL (optional)</label>
+          <input type="text" id="eb-linkedin" placeholder="linkedin.com/in/yourname">
+        </div>
+      </div>
+      <div class="builder-preview">
+        <div class="subject" id="eb-subject">Subject: Great meeting you at [Career Fair Name], [Your Name]</div>
+        <div class="body-text" id="eb-body"></div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="eb-copy" type="button">Copy Email</button>
+        <span class="status-text" id="eb-status"></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="linkedin">
+    <p class="kicker">the second touch</p>
+    <h2><span class="mark"></span>Then, Send the LinkedIn Request the Right Way</h2>
+    <p>Send it in the same window as your email, but treat it as a separate touch, not a copy and paste of it.</p>
+    <p>Skip LinkedIn's default connect message. Recruiters notice that one specifically, and it's an easy way to get lumped in with everyone who didn't bother. Always write your own note.</p>
+    <p>Keep it to who you are, where you met, and one genuine reason to connect. LinkedIn notes are short, so two sentences is plenty.</p>
+
+    <div class="builder" id="li-builder">
+      <p class="kicker">try it yourself</p>
+      <h3>Build Your Connection Note</h3>
+      <p style="margin-top:0;">LinkedIn caps connection notes at around 300 characters, so the counter below will flag it if you run long.</p>
+      <div class="builder-fields">
+        <div class="field">
+          <label for="li-recruiter">Recruiter's name</label>
+          <input type="text" id="li-recruiter" placeholder="Jamie">
+        </div>
+        <div class="field">
+          <label for="li-fair">Where you met</label>
+          <input type="text" id="li-fair" placeholder="the UF Career Fair">
+        </div>
+        <div class="field wide">
+          <label for="li-detail">Detail from your conversation</label>
+          <input type="text" id="li-detail" placeholder="your team's approach to onboarding">
+        </div>
+        <div class="field wide">
+          <label for="li-area">Area you're exploring</label>
+          <input type="text" id="li-area" placeholder="solutions engineering">
+        </div>
+      </div>
+      <div class="builder-preview">
+        <div class="body-text" id="li-body"></div>
+      </div>
+      <div class="char-count" id="li-count">0 / 300 characters</div>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="li-copy" type="button">Copy Note</button>
+        <span class="status-text" id="li-status"></span>
+      </div>
+    </div>
+
+    <p>Once you're connected, don't disappear. Occasionally engaging with a post or company update is a low effort way to stay visible without sending another email.</p>
+  </section>
+
+  <section id="mistakes">
+    <p class="kicker">learn from everyone else's fair</p>
+    <h2><span class="mark"></span>Mistakes That Quietly Kill a Follow Up</h2>
+    <p>None of these are dramatic. They're just small enough that people do them without noticing.</p>
+    <ol class="mistakes">
+      <li>
+        <span class="num">1</span>
+        <p><strong>Sending the same templated email to every recruiter.</strong> It reads as mass produced the moment two sentences could apply to any company.</p>
+      </li>
+      <li>
+        <span class="num">2</span>
+        <p><strong>Connecting on LinkedIn without a note.</strong> It looks identical to every other request already sitting in their queue.</p>
+      </li>
+      <li>
+        <span class="num">3</span>
+        <p><strong>Following up more than twice after your first email.</strong> Persistence is good, pressure is not.</p>
+      </li>
+      <li>
+        <span class="num">4</span>
+        <p><strong>Waiting too long to send anything.</strong> A perfect email sent ten days later loses to an average one sent the next morning.</p>
+      </li>
+      <li>
+        <span class="num">5</span>
+        <p><strong>Misspelling the company or recruiter's name.</strong> It's the fastest way to signal you weren't paying attention.</p>
+      </li>
+      <li>
+        <span class="num">6</span>
+        <p><strong>Only following up with your top choice company.</strong> The fair is a numbers game, so give every real conversation a real follow up.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="silence">
+    <p class="kicker">the part everyone skips</p>
+    <h2><span class="mark"></span>If They Go Quiet</h2>
+    <p>Most recruiters won't respond right away. They're working through the same pile of names you are. That's not a rejection, it just means you follow a cadence instead of guessing.</p>
+    <div class="stepper">
+      <div class="step">
+        <div class="num">1</div>
+        <h4>Day 0</h4>
+        <p>Thank you email sent, LinkedIn request sent.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h4>About a week of silence</h4>
+        <p>One short, polite check in. Reference your first email, restate interest in a sentence, ask if there's any update. No pressure, no guilt tripping.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h4>Another week of silence</h4>
+        <p>One last, casual note. It's fine, expected even, for this to be your final attempt.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h4>Still nothing</h4>
+        <p>Let the email thread go, but stay connected on LinkedIn. Recruiters move roles, roles reopen, and being known as someone who followed up well is a good reputation to have.</p>
+      </div>
+    </div>
+    <div class="note">two follow ups after your first email is the sweet spot. it shows you're serious, not spammy.</div>
+
+    <div class="builder datecalc" id="date-calc">
+      <p class="kicker">try it yourself</p>
+      <h3>Plan Your Dates</h3>
+      <p style="margin-top:0;">Enter the date you met them and we'll map out your personal follow up timeline.</p>
+      <div class="field">
+        <label for="dc-date">Date you met them</label>
+        <input type="date" id="dc-date">
+      </div>
+      <div class="datecalc-placeholder" id="dc-placeholder">Pick a date above to see your timeline.</div>
+      <div class="datecalc-results" id="dc-results" style="display:none;">
+        <div class="datecalc-row">
+          <span class="what">Send your thank you email by</span>
+          <span class="when" id="dc-email"></span>
+        </div>
+        <div class="datecalc-row">
+          <span class="what">First check in around</span>
+          <span class="when" id="dc-checkin"></span>
+        </div>
+        <div class="datecalc-row">
+          <span class="what">Final note around</span>
+          <span class="when" id="dc-final"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <p class="kicker">what if</p>
+    <h2><span class="mark"></span>Common Situations</h2>
+    <p>A few scenarios that don't fit the standard script.</p>
+
+    <details class="faq-item">
+      <summary>What if I only got a business card, no email or LinkedIn?</summary>
+      <p>Search the recruiter's name plus the company on LinkedIn. Most people are easy to find this way. Send a personalized connection request referencing the fair, and once you're connected you can ask for their email if you still need it.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What if they told me to just apply online?</summary>
+      <p>Apply within a day or two, then still send a short thank you note. Mention that you applied and reference the role, so your application isn't just one of hundreds sitting in the system.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What if I got an automatic no reply response?</summary>
+      <p>That's normal for larger companies. Send your real follow up to the recruiter you actually spoke with instead, using the email or LinkedIn you collected at the booth.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What if I talked to two people at the same booth?</summary>
+      <p>Follow up with both if the conversations were genuinely different. If one person clearly led the conversation, focus your main email there and keep the note to the other person shorter.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What if I forgot to write anything down?</summary>
+      <p>Focus on whatever detail you do remember, even something small like the swag they had out or a question you asked. A slightly generic email sent on time still beats a perfect one you never send.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What if they follow up with me first?</summary>
+      <p>Even better. Reply within a day, answer whatever they asked directly, and treat it as your opening to keep the conversation going.</p>
+    </details>
+  </section>
+
+  <section id="tracker">
+    <p class="kicker">stay organized</p>
+    <h2><span class="mark"></span>Keep a Tracker</h2>
+    <p>After a fair, you'll have talked to more companies than you think, and by the time you sit down that night to write emails, the details will already be blurring. Fill this in right on the page. It stays saved in this browser, and you can add or remove rows as you go.</p>
+    <p class="example-line">Example entry: Akamai, J. Rivera, Solutions Eng Intern, mentioned my study abroad in Ireland, emailed 9/16, awaiting reply.</p>
+
+    <div class="table-wrap">
+      <table>
+        <colgroup>
+          <col style="width:12%"><col style="width:13%"><col style="width:14%">
+          <col style="width:21%"><col style="width:12%"><col style="width:23%"><col style="width:5%">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Recruiter</th>
+            <th>Role</th>
+            <th>What We Talked About</th>
+            <th>Contacted</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tracker-body"></tbody>
+      </table>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="tracker-add" type="button">Add Row</button>
+      <button class="btn" id="tracker-download" type="button" style="display:none;">Download as CSV</button>
+      <button class="btn" id="tracker-clear" type="button">Clear All</button>
+    </div>
+    <p class="table-note">Saved automatically in this browser only. It won't follow you to a different device.</p>
+  </section>
+
+  <section id="recap">
+    <div class="recap">
+      <p class="kicker">for later</p>
+      <h2>Pocket Version</h2>
+      <ul>
+        <li>Send within 24 hours, always.</li>
+        <li>Every email needs one specific detail from your actual conversation.</li>
+        <li>Connect on LinkedIn separately, with your own note. Never the default.</li>
+        <li>No response after a week? Send one follow up. Still nothing after that? Send one more, then let it go.</li>
+        <li>Keep a tracker. Future you will not remember which recruiter said what.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    A WiCSE Career Development resource. Questions, or want a second set of eyes on your email? Drop it in <strong>#accountability</strong> <span class="heart">💜</span>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- CHECKLIST ---------- */
+  (function(){
+    var KEY = "wicse_checklist_v1";
+    var boxes = document.querySelectorAll(".check-item input[type=checkbox]");
+
+    function applyState(state){
+      boxes.forEach(function(b){
+        var on = !!state[b.getAttribute("data-item")];
+        b.checked = on;
+        var item = b.closest(".check-item");
+        if(item) item.classList.toggle("done", on);
+      });
+    }
+
+    function readState(){
+      try{
+        return JSON.parse(localStorage.getItem(KEY) || "{}");
+      }catch(e){
+        return {};
+      }
+    }
+
+    function writeState(state){
+      try{
+        localStorage.setItem(KEY, JSON.stringify(state));
+      }catch(e){}
+    }
+
+    applyState(readState());
+
+    boxes.forEach(function(b){
+      b.addEventListener("change", function(){
+        var state = readState();
+        state[b.getAttribute("data-item")] = b.checked;
+        writeState(state);
+        var item = b.closest(".check-item");
+        if(item) item.classList.toggle("done", b.checked);
+      });
+    });
+
+    var resetBtn = document.getElementById("checklist-reset");
+    if(resetBtn){
+      resetBtn.addEventListener("click", function(){
+        writeState({});
+        applyState({});
+      });
+    }
+  })();
+
+  /* ---------- EMAIL BUILDER ---------- */
+  (function(){
+    function val(id, fallback){
+      var el = document.getElementById(id);
+      var v = el && el.value ? el.value.trim() : "";
+      return v.length ? v : fallback;
+    }
+
+    function update(){
+      var name = val("eb-name", "[Your Name]");
+      var recruiter = val("eb-recruiter", "[Recruiter Name]");
+      var fair = val("eb-fair", "[Career Fair Name]");
+      var company = val("eb-company", "[Company]");
+      var role = val("eb-role", "[Role or Team]");
+      var detail = val("eb-detail", "[specific detail from your conversation]");
+      var reason = val("eb-reason", "[reason tied to something they said]");
+      var phone = val("eb-phone", "");
+      var linkedin = val("eb-linkedin", "");
+
+      var subject = "Subject: Great meeting you at " + fair + ", " + name;
+      var lines = [];
+      lines.push("Hi " + recruiter + ",");
+      lines.push("");
+      lines.push("It was great talking with you at " + fair + ". I'm the CS student who mentioned " + detail + ".");
+      lines.push("");
+      lines.push("I'm really interested in the " + role + " at " + company + ", especially " + reason + ". Would love to hear about next steps, or happy to share more about my background if that's useful.");
+      lines.push("");
+      lines.push("Thanks again for your time,");
+      lines.push(name);
+      if(phone) lines.push(phone);
+      if(linkedin) lines.push(linkedin);
+
+      document.getElementById("eb-subject").textContent = subject;
+      document.getElementById("eb-body").textContent = lines.join("\n");
+    }
+
+    var ids = ["eb-name","eb-recruiter","eb-fair","eb-company","eb-role","eb-detail","eb-reason","eb-phone","eb-linkedin"];
+    ids.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.addEventListener("input", update);
+    });
+    update();
+
+    var copyBtn = document.getElementById("eb-copy");
+    var statusEl = document.getElementById("eb-status");
+    copyBtn.addEventListener("click", function(){
+      var subject = document.getElementById("eb-subject").textContent;
+      var body = document.getElementById("eb-body").textContent;
+      var full = subject + "\n\n" + body;
+      copyText(full, statusEl);
+    });
+  })();
+
+  /* ---------- LINKEDIN BUILDER ---------- */
+  (function(){
+    function val(id, fallback){
+      var el = document.getElementById(id);
+      var v = el && el.value ? el.value.trim() : "";
+      return v.length ? v : fallback;
+    }
+
+    function update(){
+      var recruiter = val("li-recruiter", "[Name]");
+      var fair = val("li-fair", "the UF Career Fair");
+      var detail = val("li-detail", "[a detail from your conversation]");
+      var area = val("li-area", "[the area you're exploring]");
+
+      var text = "Hi " + recruiter + ", it was great meeting you at " + fair + ". I'm the CS student who asked about " + detail + ". Would love to stay connected as I explore roles in " + area + "!";
+
+      document.getElementById("li-body").textContent = text;
+      var count = text.length;
+      var countEl = document.getElementById("li-count");
+      countEl.textContent = count + " / 300 characters";
+      countEl.classList.toggle("over", count > 300);
+    }
+
+    var ids = ["li-recruiter","li-fair","li-detail","li-area"];
+    ids.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.addEventListener("input", update);
+    });
+    update();
+
+    var copyBtn = document.getElementById("li-copy");
+    var statusEl = document.getElementById("li-status");
+    copyBtn.addEventListener("click", function(){
+      copyText(document.getElementById("li-body").textContent, statusEl);
+    });
+  })();
+
+  /* ---------- SHARED COPY HELPER ---------- */
+  function copyText(text, statusEl){
+    function ok(){
+      statusEl.textContent = "Copied";
+      setTimeout(function(){ statusEl.textContent = ""; }, 2000);
+    }
+    function fail(){
+      statusEl.textContent = "Couldn't copy automatically, select the text above manually";
+      setTimeout(function(){ statusEl.textContent = ""; }, 4000);
+    }
+    try{
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(ok, fail);
+      }else{
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        var success = document.execCommand("copy");
+        document.body.removeChild(ta);
+        if(success) ok(); else fail();
+      }
+    }catch(e){
+      fail();
+    }
+  }
+
+  /* ---------- DATE CALCULATOR ---------- */
+  (function(){
+    var dateInput = document.getElementById("dc-date");
+    var placeholder = document.getElementById("dc-placeholder");
+    var results = document.getElementById("dc-results");
+
+    function formatDate(d){
+      return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
+    }
+
+    function addDays(d, n){
+      var copy = new Date(d.getTime());
+      copy.setDate(copy.getDate() + n);
+      return copy;
+    }
+
+    dateInput.addEventListener("change", function(){
+      if(!dateInput.value){
+        placeholder.style.display = "block";
+        results.style.display = "none";
+        return;
+      }
+      var parts = dateInput.value.split("-");
+      var base = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]), 12, 0, 0);
+
+      document.getElementById("dc-email").textContent = formatDate(addDays(base, 1));
+      document.getElementById("dc-checkin").textContent = formatDate(addDays(base, 7));
+      document.getElementById("dc-final").textContent = formatDate(addDays(base, 14));
+
+      placeholder.style.display = "none";
+      results.style.display = "grid";
+    });
+  })();
+
+  /* ---------- TRACKER ---------- */
+  (function(){
+    var KEY = "wicse_tracker_rows_v1";
+    var body = document.getElementById("tracker-body");
+    var statusOptions = ["Not sent","Sent","Awaiting reply","Follow up sent","Interview","No response","Closed"];
+    var fields = ["company","recruiter","role","notes","contacted","status"];
+    var rows = [];
+
+    function blankRow(){
+      return { company:"", recruiter:"", role:"", notes:"", contacted:"", status:"Not sent" };
+    }
+
+    function load(){
+      try{
+        var saved = JSON.parse(localStorage.getItem(KEY) || "null");
+        if(saved && saved.length) return saved;
+      }catch(e){}
+      return [blankRow()];
+    }
+
+    function save(){
+      try{
+        localStorage.setItem(KEY, JSON.stringify(rows));
+      }catch(e){}
+    }
+
+    function render(){
+      body.innerHTML = "";
+      rows.forEach(function(row, i){
+        var tr = document.createElement("tr");
+
+        fields.forEach(function(field){
+          var td = document.createElement("td");
+          if(field === "status"){
+            var select = document.createElement("select");
+            statusOptions.forEach(function(opt){
+              var o = document.createElement("option");
+              o.value = opt;
+              o.textContent = opt;
+              if(row.status === opt) o.selected = true;
+              select.appendChild(o);
+            });
+            select.addEventListener("change", function(){
+              rows[i].status = select.value;
+              save();
+            });
+            td.appendChild(select);
+          }else{
+            var input = document.createElement("input");
+            input.type = "text";
+            input.value = row[field] || "";
+            input.addEventListener("input", function(){
+              rows[i][field] = input.value;
+              save();
+            });
+            td.appendChild(input);
+          }
+          tr.appendChild(td);
+        });
+
+        var removeTd = document.createElement("td");
+        removeTd.className = "remove-cell";
+        var removeBtn = document.createElement("button");
+        removeBtn.type = "button";
+        removeBtn.className = "row-remove";
+        removeBtn.setAttribute("aria-label", "Remove row");
+        removeBtn.textContent = "\u00D7";
+        removeBtn.addEventListener("click", function(){
+          rows.splice(i, 1);
+          if(rows.length === 0) rows.push(blankRow());
+          save();
+          render();
+        });
+        removeTd.appendChild(removeBtn);
+        tr.appendChild(removeTd);
+
+        body.appendChild(tr);
+      });
+    }
+
+    rows = load();
+    render();
+
+    document.getElementById("tracker-add").addEventListener("click", function(){
+      rows.push(blankRow());
+      save();
+      render();
+    });
+
+    var clearBtn = document.getElementById("tracker-clear");
+    var clearArmed = false;
+    var clearTimer = null;
+    clearBtn.addEventListener("click", function(){
+      if(!clearArmed){
+        clearArmed = true;
+        clearBtn.textContent = "Click again to confirm";
+        clearTimer = setTimeout(function(){
+          clearArmed = false;
+          clearBtn.textContent = "Clear All";
+        }, 4000);
+      }else{
+        clearTimeout(clearTimer);
+        clearArmed = false;
+        clearBtn.textContent = "Clear All";
+        rows = [blankRow()];
+        save();
+        render();
+      }
+    });
+
+    function toCsvField(v){
+      var s = String(v == null ? "" : v);
+      if(/[",\n]/.test(s)){
+        s = '"' + s.replace(/"/g, '""') + '"';
+      }
+      return s;
+    }
+
+    function buildCsv(){
+      var header = ["Company","Recruiter","Role","What We Talked About","Contacted","Status"];
+      var lines = [header.map(toCsvField).join(",")];
+      rows.forEach(function(row){
+        lines.push(fields.map(function(f){ return toCsvField(row[f]); }).join(","));
+      });
+      return lines.join("\n");
+    }
+
+    var downloadBtn = document.getElementById("tracker-download");
+    if(window.claude && typeof window.claude.use === "function"){
+      window.claude.use("downloads").then(function(downloads){
+        if(!downloads) return;
+        downloadBtn.style.display = "inline-block";
+        downloadBtn.addEventListener("click", function(){
+          downloads.save({ filename: "wicse_follow_up_tracker.csv", data: buildCsv() }).catch(function(){});
+        });
+      }).catch(function(){});
+    }
+  })();
+
+})();
+</script>
+</body>
+</html>
